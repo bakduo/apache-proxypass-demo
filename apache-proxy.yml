@@ -1,0 +1,13 @@
+version: '3.8'
+services: 
+    wodpress:
+        image: apache-proxypass:nelix
+        env_file:
+          - ./config/apache.env
+        restart: always
+        ports: 
+          - 80:80
+          - 443:443
+        volumes:
+            -path/sites-enabled/:/etc/httpd/sites-enabled/
+
